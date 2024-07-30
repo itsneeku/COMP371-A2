@@ -14,8 +14,11 @@ void framebuffer_size_callback(GLFWwindow *window, int width, int height);
 void processInput(GLFWwindow *window, glm::mat4 &transform);
 
 // Window Size
-const unsigned int WIN_WIDTH = 800;
-const unsigned int WIN_HEIGHT = 600;
+const int WIN_WIDTH = 800;
+const int WIN_HEIGHT = 600;
+const float TRANSLATION_DISTANCE = 0.1f;
+const float ROTATION_ANGLE = 30.0f;
+const float SCALING_FACTOR = 1.1f;
 
 const char *vertexShaderSource = R"glsl(
         #version 330 core
@@ -134,35 +137,31 @@ void processInput(GLFWwindow *window, glm::mat4 &transform)
     static float rotation = 0.0f;
     static float scale = 1.0f;
 
-    float d = 0.1f;  // translation distance
-    float s = 1.1f;  // scaling factor
-    float r = 30.0f; // rotation angle
-
     // Close window
     if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
         glfwSetWindowShouldClose(window, true);
 
     // Translation
     if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
-        position.y += d;
+        position.y += TRANSLATION_DISTANCE;
     if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
-        position.y -= d;
+        position.y -= TRANSLATION_DISTANCE;
     if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
-        position.x -= d;
+        position.x -= TRANSLATION_DISTANCE;
     if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
-        position.x += d;
+        position.x += TRANSLATION_DISTANCE;
 
     // Rotation
     if (glfwGetKey(window, GLFW_KEY_Q) == GLFW_PRESS)
-        rotation += r;
+        rotation += ROTATION_ANGLE;
     if (glfwGetKey(window, GLFW_KEY_E) == GLFW_PRESS)
-        rotation -= r;
+        rotation -= ROTATION_ANGLE;
 
     // Scaling
     if (glfwGetKey(window, GLFW_KEY_R) == GLFW_PRESS)
-        scale *= s;
+        scale *= SCALING_FACTOR;
     if (glfwGetKey(window, GLFW_KEY_F) == GLFW_PRESS)
-        scale /= s;
+        scale /= SCALING_FACTOR;
 
     // Reset to initial values
     if (glfwGetKey(window, GLFW_KEY_SPACE) == GLFW_PRESS)
