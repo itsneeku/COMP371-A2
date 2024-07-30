@@ -1,0 +1,19 @@
+# COMP 371 - Assignment 2 Report
+
+- Overall, the assignment was peer programmed by all members at the same time.
+
+## Mate Barabas 40285661
+- Glew and Glad setup
+- GLFW Window, shaders and triangle data
+- Fix transformations not applying when key not held
+
+## Rostislav Rusev 40208933
+- Buffer setup
+- Render loop
+- Input handling
+- Fix glfw inputs not polling
+
+## Nicolae Rusu 40245233
+- Input handling
+- Window resizing fix
+- Fix translation not following viewport

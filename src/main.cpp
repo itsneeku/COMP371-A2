@@ -37,9 +37,6 @@ const char *fragmentShaderSource = R"glsl(
 int main()
 {
     glfwInit();
-    // glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
-    // glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
-    // glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
     // GLFW Window
     GLFWwindow *window = glfwCreateWindow(WIN_WIDTH, WIN_HEIGHT, "COMP371_ASSIGNMENT2", NULL, NULL);
@@ -87,7 +84,7 @@ int main()
     glGenBuffers(1, &EBO);
     glBindVertexArray(VAOs[0]);
 
-    // Bind the vertex buffer object (VBO) to the current OpenGL context
+    // Bind the VBO to the current OpenGL context
     glBindBuffer(GL_ARRAY_BUFFER, VBOs[0]);
 
     // Copy the vertex data to the VBO
