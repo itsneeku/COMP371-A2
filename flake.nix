@@ -7,7 +7,7 @@
         pkgs = import nixpkgs { inherit system; };
         projectName = "OpenGL_Project";
 
-        buildDeps = with pkgs; [ cmake glfw glm ];
+        buildDeps = with pkgs; [ cmake glfw glm glew ];
         runtimeDeps = with pkgs; [ ];
         devDeps = with pkgs; [ cmake python312Packages.glad ];
         allPackages =
