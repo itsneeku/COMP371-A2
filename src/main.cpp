@@ -124,8 +124,8 @@ int main()
     }
 
     // Deallocate resources
-    glDeleteVertexArrays(2, VAOs);
-    glDeleteBuffers(2, VBOs);
+    glDeleteVertexArrays(1, VAOs);
+    glDeleteBuffers(1, VBOs);
     glDeleteProgram(shaderProgram);
     glfwTerminate();
     return 0;
